@@ -1,0 +1,183 @@
+body {
+    transition: background-image 10s ease-in-out;
+    background-image: linear-gradient(45deg, #af73ff, #555cff);
+    background-size: 20px 10px;
+}
+
+h1{
+    position: absolute;
+    text-align: center;
+
+}
+
+#titulo{
+
+    left: 37%;
+    top: 10%;
+    font-size: 40px;
+
+}
+
+
+
+#Jeremy{
+
+    position: absolute;
+    top: -11%;
+    left: -8%;
+    width: auto;
+
+}
+
+#dibujo{
+
+    position: absolute;
+    top: -20%;
+    left: 35%;
+    width: 64%;
+    z-index: -1;
+
+}
+
+#redes{
+
+    position: absolute;
+    top: 21%;
+    left: 8%;
+    font-size: 32px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+}
+
+#instagram, #facebook, #Twitter, #Tiktok {
+    transition: background-image 0.5s ease-in-out; /* Añadir transición */
+}
+
+#instagram{
+
+    position: absolute;
+    top: 34%;
+    left: 8%;
+    background-image: linear-gradient(to right, #fe47b8, #ff225d);
+    border: none;
+    color: white;
+    padding: 30px 150px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    border-radius: 12px;
+    cursor: pointer;
+
+
+}
+
+#facebook{
+
+
+    position: absolute;
+    top: 50%;
+    left: 3%;
+    background-image: linear-gradient(to right, #5a37f7, #995bf5);
+    border: none;
+    color: white;
+    padding: 30px 150px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    border-radius: 12px;
+    cursor: pointer;
+
+}
+
+#Twitter{
+
+    position: absolute;
+    top: 66%;
+    left: 8%;
+    background-image: linear-gradient(to right, #00bbff, #66cbfe);
+    border:#00bbff;
+    color: white;
+    padding: 30px 160px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    border-radius: 12px;
+    cursor: pointer;
+
+}
+
+#Tiktok{
+
+    position: absolute;
+    top: 82%;
+    left: 3%;
+    background-image: linear-gradient(to right, #1d006c, #9b0000);
+    border: none;
+    color: white;
+    padding: 30px 163px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    border-radius: 12px;
+    cursor: pointer;
+    margin-bottom: 25px;
+
+}
+
+#github{
+
+
+    font-size: 120%;
+    position: absolute;
+    top: 106%;
+    left: 46%;
+}
+
+@media (max-width: 480px) {
+    body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #titulo {
+        position: static;
+        font-size: 24px;
+        margin-top: 10px;
+    }
+
+    #redes {
+        position: static;
+        font-size: 24px;
+        margin-top: 10px;
+    }
+
+    #instagram, #facebook, #Twitter, #Tiktok {
+        position: static;
+        width: 80%;
+        padding: 15px 0;
+        margin: 10px 0;
+    }
+
+    #Jeremy {
+        width: 165%;
+        position: static;
+        margin-top: -20px;
+        margin-left: 10px;
+    }
+
+    #dibujo{
+
+        position: static;
+        width: 100%;
+
+    }
+}
