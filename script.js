@@ -1,7 +1,7 @@
 function cargarIG(link) {
-    if (confirm("¿Estás seguro de que quieres ir a otra página?")) {
-        window.open(link, "_blank");
-    }
+   
+    window.open(link, "_blank");
+    
 }
 
 
