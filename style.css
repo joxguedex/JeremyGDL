@@ -180,4 +180,12 @@ h1{
         width: 100%;
 
     }
+
+    #github{
+
+
+        position: static;
+        width: 90%;
+
+    }
 }
