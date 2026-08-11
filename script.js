@@ -1,3 +1,6 @@
+// ─── Timer global para el reseteo retrasado ───
+let resetTimer = null;
+
 // ─── Abrir enlace en nueva pestaña ───
 function cargarIG(link) {
     window.open(link, "_blank");
@@ -5,6 +8,11 @@ function cargarIG(link) {
 
 // ─── Cambiar color de fondo con overlay suave ───
 function cambiarColor(degradado1) {
+    // Cancelar cualquier reset pendiente
+    if (resetTimer) {
+        clearTimeout(resetTimer);
+        resetTimer = null;
+    }
     const overlay = document.getElementById('bg-overlay');
     overlay.style.backgroundImage = degradado1;
     overlay.style.opacity = 1;
@@ -12,6 +20,11 @@ function cambiarColor(degradado1) {
 
 // ─── Cambiar imagen del dibujo con fade ───
 function cambiarImagen(nuevaImagen) {
+    // Cancelar cualquier reset pendiente
+    if (resetTimer) {
+        clearTimeout(resetTimer);
+        resetTimer = null;
+    }
     const dibujo = document.getElementById('dibujo');
     dibujo.style.opacity = 0.2;
     setTimeout(() => {
@@ -20,17 +33,27 @@ function cambiarImagen(nuevaImagen) {
     }, 80);
 }
 
-// ─── Restaurar color y dibujo original ───
+// ─── Restaurar color y dibujo después de 20 segundos ───
 function resetColor() {
+    // Cancelar timer anterior si existía
+    if (resetTimer) {
+        clearTimeout(resetTimer);
+    }
+
+    // Solo restaurar el color de fondo inmediatamente
     const overlay = document.getElementById('bg-overlay');
     overlay.style.opacity = 0;
 
-    const dibujo = document.getElementById('dibujo');
-    dibujo.style.opacity = 0.2;
-    setTimeout(() => {
-        dibujo.src = 'dibujoGato.png';
-        dibujo.style.opacity = 1;
-    }, 80);
+    // Esperar 20 segundos para restaurar la imagen al gato
+    resetTimer = setTimeout(() => {
+        const dibujo = document.getElementById('dibujo');
+        dibujo.style.opacity = 0.2;
+        setTimeout(() => {
+            dibujo.src = 'dibujoGato.png';
+            dibujo.style.opacity = 1;
+        }, 80);
+        resetTimer = null;
+    }, 20000);
 }
 
 
