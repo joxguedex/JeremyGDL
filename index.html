@@ -3,31 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google Fonts para una tipografía moderna -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
     <link href="style.css" rel="stylesheet">
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
     <title>JeremyGDL</title>
 </head>
 <body>
+    <!-- Overlay para la transición suave de fondo -->
+    <div id="bg-overlay"></div>
+    
+    <div class="container">
+        <div class="left-panel">
+            <div class="header">
+                <img src="Jeremy-removebg-preview.png" alt="Logo" id="Jeremy">
+                <h2 id="redes">Mis Redes Sociales</h2>
+            </div>
+            
+            <div class="links-container">
+                <button id="instagram" class="social-btn" onclick="cargarIG('https://www.instagram.com/jeremygdll?igsh=MWpmMDY2dnJuYWdzZQ==')" onmouseover="cambiarColor('linear-gradient(45deg, #fe47b8, #ff225d)'); cambiarImagen('dibujo2.png')" onmouseout="resetColor()">
+                    Instagram
+                </button>
+                <button id="facebook" class="social-btn" onclick="cargarIG('https://www.facebook.com/jeremygdlyt?mibextid=ZbWKwL')" onmouseover="cambiarColor('linear-gradient(45deg, #5a37f7, #995bf5)'); cambiarImagen('dibujo3.png')" onmouseout="resetColor()">
+                    Facebook
+                </button>
+                <button id="Twitter" class="social-btn" onclick="cargarIG('https://x.com/Jeremy_GDL?t=i_GuEUs6uQwfHeaeCtbtNw&s=09')" onmouseover="cambiarColor('linear-gradient(45deg, #00bbff, #66cbfe)'); cambiarImagen('dibujoTwitterS.png')" onmouseout="resetColor()">
+                    Twitter
+                </button>
+                <button id="Tiktok" class="social-btn" onclick="cargarIG('https://www.tiktok.com/@jeremygdll?_t=8p4YqL29iL7&_r=1')" onmouseover="cambiarColor('linear-gradient(45deg, rgb(142 58 253), rgb(255 85 184))'); cambiarImagen('dibujo4.png')" onmouseout="resetColor()">
+                    Tiktok
+                </button>
+            </div>
 
-    <img src="Jeremy-removebg-preview.png" alt="Logo" id="Jeremy">
+            <p id="github">Desarrollado por: <a href="https://github.com/joxguedex" target="_blank">Joxguedez</a></p>
+        </div>
 
-
-    <h2 id="redes">Mis Redes Sociales</h2>
-    <button id="instagram" onclick="cargarIG('https://www.instagram.com/jeremygdll?igsh=MWpmMDY2dnJuYWdzZQ==')" onmouseover="cambiarColor('linear-gradient(45deg, #fe47b8, #ff225d)'); cambiarImagen('dibujo2.png')" onmouseout="resetColor()">Instagram</button>
-    <button id="facebook" onclick="cargarIG('https://www.facebook.com/jeremygdlyt?mibextid=ZbWKwL')" onmouseover="cambiarColor('linear-gradient(45deg, #5a37f7, #995bf5)'); cambiarImagen('dibujo3.png')" onmouseout="resetColor()">Facebook</button>
-    <button id="Twitter" onclick="cargarIG('https://x.com/Jeremy_GDL?t=i_GuEUs6uQwfHeaeCtbtNw&s=09')" onmouseover="cambiarColor('linear-gradient(45deg, #00bbff, #66cbfe)'); cambiarImagen('dibujoTwitterS.png')" onmouseout="resetColor()" >Twitter</button>
-    <button id="Tiktok" onclick="cargarIG('https://www.tiktok.com/@jeremygdll?_t=8p4YqL29iL7&_r=1')" onmouseover="cambiarColor('linear-gradient(45deg, rgb(142 58 253), rgb(255 85 184))'); cambiarImagen('dibujo4.png')" onmouseout="resetColor()">Tiktok</button>
-
-    <img src="dibujoGato.png" alt="Gatito" id="dibujo">
-
-    <p id="github">Desarrollado por: <a href="https://github.com/joxguedex" target="_blank" style="color: #000505; text-decoration: none;">Joxguedez</a></p>
-
-
-
+        <div class="right-panel">
+            <img src="dibujoGato.png" alt="Gatito" id="dibujo">
+        </div>
+    </div>
 </body>
-
-
-
-
-
 </html>

@@ -1,191 +1,260 @@
+:root {
+    --primary-bg: linear-gradient(45deg, #af73ff, #555cff);
+    --glass-bg: rgba(255, 255, 255, 0.1);
+    --glass-border: rgba(255, 255, 255, 0.2);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-    transition: background-image 10s ease-in-out;
-    background-image: linear-gradient(45deg, #af73ff, #555cff);
-    background-size: 20px 10px;
+    font-family: 'Outfit', sans-serif;
+    background-image: var(--primary-bg);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+    color: white;
 }
 
-h1{
-    position: absolute;
-    text-align: center;
-
-}
-
-#titulo{
-
-    left: 37%;
-    top: 10%;
-    font-size: 40px;
-
-}
-
-
-
-#Jeremy{
-
-    position: absolute;
-    top: -11%;
-    left: -8%;
-    width: auto;
-
-}
-
-#dibujo{
-
-    position: absolute;
-    top: -20%;
-    left: 35%;
-    width: 64%;
+#bg-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
     z-index: -1;
-
+    background-size: cover;
 }
 
-#redes{
-
-    position: absolute;
-    top: 21%;
-    left: 8%;
-    font-size: 32px;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-
+.container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    max-width: 1200px;
+    min-height: 100vh;
+    padding: 2rem;
+    position: relative;
+    z-index: 1;
 }
 
-#instagram, #facebook, #Twitter, #Tiktok {
-    transition: background-image 0.5s ease-in-out; /* Añadir transición */
+.left-panel {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem;
+    max-width: 500px;
 }
 
-#instagram{
+.header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 3rem;
+    gap: 1.5rem;
+}
 
-    position: absolute;
-    top: 34%;
-    left: 8%;
-    background-image: linear-gradient(to right, #fe47b8, #ff225d);
+#Jeremy {
+    width: 100px;
+    height: auto;
+    filter: drop-shadow(0 8px 16px rgba(0,0,0,0.3));
+    animation: floatLogo 6s ease-in-out infinite;
+}
+
+@keyframes floatLogo {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-8px); }
+    100% { transform: translateY(0px); }
+}
+
+#redes {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: white;
+    text-shadow: 2px 4px 8px rgba(0,0,0,0.3);
+    line-height: 1.2;
+}
+
+.links-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    margin-bottom: 3rem;
+}
+
+.social-btn {
     border: none;
     color: white;
-    padding: 30px 150px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    border-radius: 12px;
+    padding: 1.2rem 2.5rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border-radius: 20px;
     cursor: pointer;
-
-
+    text-decoration: none;
+    text-align: center;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.2);
+    width: 100%;
+    max-width: 350px;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
 }
 
-#facebook{
+/* Efecto escalonado original, pero más sutil */
+.social-btn:nth-child(even) {
+    align-self: flex-start;
+    margin-left: 2.5rem;
+}
+.social-btn:nth-child(odd) {
+    align-self: flex-start;
+    margin-left: 0;
+}
 
-
+.social-btn::before {
+    content: '';
     position: absolute;
-    top: 50%;
-    left: 3%;
-    background-image: linear-gradient(to right, #5a37f7, #995bf5);
-    border: none;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(255, 255, 255, 0.15);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.social-btn:hover {
+    transform: translateY(-5px) scale(1.03);
+    box-shadow: 0 15px 25px rgba(0,0,0,0.25), inset 0 1px 0 rgba(255,255,255,0.4);
+}
+
+.social-btn:hover::before {
+    opacity: 1;
+}
+
+/* Colores de los botones */
+#instagram { background-image: linear-gradient(to right, #fe47b8, #ff225d); }
+#facebook { background-image: linear-gradient(to right, #5a37f7, #995bf5); }
+#Twitter { background-image: linear-gradient(to right, #00bbff, #66cbfe); }
+#Tiktok { background-image: linear-gradient(to right, #1d006c, #9b0000); }
+
+
+.right-panel {
+    flex: 1.2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+#dibujo {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 20px 40px rgba(0,0,0,0.4));
+    transition: opacity 0.3s ease-in-out;
+    animation: floatImage 8s ease-in-out infinite;
+}
+
+@keyframes floatImage {
+    0% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-15px) rotate(2deg); }
+    100% { transform: translateY(0px) rotate(0deg); }
+}
+
+#github {
+    font-size: 1rem;
+    color: rgba(255,255,255,0.9);
+    background: var(--glass-bg);
+    padding: 12px 24px;
+    border-radius: 30px;
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(8px);
+    display: inline-block;
+    align-self: flex-start;
+}
+
+#github a {
     color: white;
-    padding: 30px 150px;
-    text-align: center;
     text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    border-radius: 12px;
-    cursor: pointer;
-
+    font-weight: 800;
+    transition: color 0.3s ease;
 }
 
-#Twitter{
-
-    position: absolute;
-    top: 66%;
-    left: 8%;
-    background-image: linear-gradient(to right, #00bbff, #66cbfe);
-    border:#00bbff;
-    color: white;
-    padding: 30px 160px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    border-radius: 12px;
-    cursor: pointer;
-
+#github a:hover {
+    color: #ffda79;
 }
 
-#Tiktok{
 
-    position: absolute;
-    top: 82%;
-    left: 3%;
-    background-image: linear-gradient(to right, #1d006c, #9b0000);
-    border: none;
-    color: white;
-    padding: 30px 163px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    border-radius: 12px;
-    cursor: pointer;
-    margin-bottom: 25px;
-
-}
-
-#github{
-
-
-    font-size: 120%;
-    position: absolute;
-    top: 106%;
-    left: 10%;
-}
-
-@media (max-width: 480px) {
-    body {
-        display: flex;
-        flex-direction: column;
+/* Adaptabilidad Móvil */
+@media (max-width: 900px) {
+    .container {
+        flex-direction: column-reverse;
+        padding: 1rem;
         align-items: center;
+        justify-content: flex-end;
     }
 
-    #titulo {
-        position: static;
-        font-size: 24px;
-        margin-top: 10px;
+    .right-panel {
+        width: 100%;
+        margin-bottom: -3rem;
+        margin-top: 2rem;
+        z-index: 0;
+    }
+    
+    #dibujo {
+        max-width: 80%;
+    }
+
+    .left-panel {
+        width: 100%;
+        max-width: 100%;
+        align-items: center;
+        z-index: 1;
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border-radius: 30px;
+        border: 1px solid rgba(255,255,255,0.1);
+        padding: 2.5rem 1.5rem;
+        margin-bottom: 2rem;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
+
+    .header {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
     }
 
     #redes {
-        position: static;
-        font-size: 24px;
-        margin-top: 10px;
+        font-size: 2rem;
     }
 
-    #instagram, #facebook, #Twitter, #Tiktok {
-        position: static;
-        width: 80%;
-        padding: 15px 0;
-        margin: 10px 0;
-    }
-
-    #Jeremy {
-        width: 165%;
-        position: static;
-        margin-top: -20px;
-        margin-left: 10px;
-    }
-
-    #dibujo{
-
-        position: static;
+    .links-container {
         width: 100%;
-
+        align-items: center;
+        gap: 1rem;
     }
 
-    #github{
+    .social-btn {
+        max-width: 100%;
+        padding: 1rem 2rem;
+    }
 
+    .social-btn:nth-child(even),
+    .social-btn:nth-child(odd) {
+        align-self: center;
+        margin-left: 0;
+        width: 100%;
+    }
 
-        position: static;
-        width: 90%;
-
+    #github {
+        align-self: center;
+        margin-top: 1rem;
     }
 }

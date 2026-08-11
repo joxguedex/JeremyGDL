@@ -1,17 +1,11 @@
 function cargarIG(link) {
-   
     window.open(link, "_blank");
-    
 }
 
-
 function cambiarColor(degradado1) {
-    const body = document.body;
-
-    body.style.transition = "background-image 5s ease-in-out";
-
-    body.style.backgroundImage = degradado1;
-
+    const overlay = document.getElementById('bg-overlay');
+    overlay.style.backgroundImage = degradado1;
+    overlay.style.opacity = 1;
 }
 
 function cambiarImagen(nuevaImagen) {
@@ -20,6 +14,10 @@ function cambiarImagen(nuevaImagen) {
 }
 
 function resetColor() {
-    document.body.style.backgroundImage = "linear-gradient(45deg, #af73ff, #555cff)"; // Restaura el color original
-    document.body.style.transition = "background-image 5s ease-in-out";
+    const overlay = document.getElementById('bg-overlay');
+    overlay.style.opacity = 0;
+    
+    // Restaurar a la imagen principal
+    const dibujo = document.getElementById('dibujo');
+    dibujo.src = 'dibujoGato.png';
 }
