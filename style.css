@@ -111,8 +111,8 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 420px;
-    height: 420px;
+    width: 550px;
+    height: 550px;
     background: radial-gradient(circle, var(--glow-purple), transparent 70%);
     border-radius: 50%;
     animation: pulseGlow 4s ease-in-out infinite;
@@ -125,7 +125,7 @@ body {
 }
 
 #Jeremy {
-    width: 420px;
+    width: 550px;
     height: auto;
     filter: drop-shadow(0 10px 30px rgba(0,0,0,0.4));
     animation: floatLogo 6s ease-in-out infinite;
@@ -140,29 +140,41 @@ body {
 
 /* ─── Título ─── */
 #redes {
-    font-size: 2.6rem;
+    font-size: 3rem;
     font-weight: 800;
     color: var(--text-primary);
     margin-bottom: 2.5rem;
-    line-height: 1.1;
+    line-height: 1.15;
     position: relative;
+    padding-left: 1.2rem;
+    border-left: 4px solid rgba(255,255,255,0.3);
 }
 
 .redes-label {
     display: block;
-    font-weight: 300;
-    font-size: 1.4rem;
-    letter-spacing: 4px;
+    font-weight: 400;
+    font-size: 1.1rem;
+    letter-spacing: 6px;
     text-transform: uppercase;
-    color: var(--text-secondary);
-    margin-bottom: 0.3rem;
+    color: rgba(255,255,255,0.55);
+    margin-bottom: 0.5rem;
 }
 
 .redes-accent {
-    background: linear-gradient(90deg, #fff, #e0c3fc, #ffb6c1);
+    background: linear-gradient(90deg, #ffffff, #d8b4fe, #f9a8d4, #fde68a);
+    background-size: 200% auto;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    animation: shimmerText 4s linear infinite;
+    font-size: 3.2rem;
+    letter-spacing: 1px;
+    text-shadow: none;
+}
+
+@keyframes shimmerText {
+    0% { background-position: 0% center; }
+    100% { background-position: 200% center; }
 }
 
 /* ─── Contenedor de enlaces ─── */
