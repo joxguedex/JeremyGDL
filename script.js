@@ -13,11 +13,11 @@ function cambiarColor(degradado1) {
 // ─── Cambiar imagen del dibujo con fade ───
 function cambiarImagen(nuevaImagen) {
     const dibujo = document.getElementById('dibujo');
-    dibujo.style.opacity = 0.3;
+    dibujo.style.opacity = 0.2;
     setTimeout(() => {
         dibujo.src = nuevaImagen;
         dibujo.style.opacity = 1;
-    }, 200);
+    }, 80);
 }
 
 // ─── Restaurar color y dibujo original ───
@@ -26,11 +26,11 @@ function resetColor() {
     overlay.style.opacity = 0;
 
     const dibujo = document.getElementById('dibujo');
-    dibujo.style.opacity = 0.3;
+    dibujo.style.opacity = 0.2;
     setTimeout(() => {
         dibujo.src = 'dibujoGato.png';
         dibujo.style.opacity = 1;
-    }, 200);
+    }, 80);
 }
 
 
